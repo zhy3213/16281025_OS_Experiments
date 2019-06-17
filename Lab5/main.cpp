@@ -221,7 +221,7 @@ int rename(char *old, char *new1)
     }
     return 0;
 }
-int read(int index, int count)// 从指定文件顺序读入count个字节memarea指定的内存位置。读操作从文件的读写指针指示的位置开始。
+int read(int index, int count)
 {
     string mem_area("a",100);
     for (int j = 0; j < CMAX; j++)
@@ -240,7 +240,7 @@ int read(int index, int count)// 从指定文件顺序读入count个字节memare
     cout << "找不到文件,请重试" << endl;
     return 0;
 }
-int write(int index, string mem_area, int count)// 把memarea指定的内存位置开始的count个字节顺序写入指定文件。写操作从文件的读写指针指示的位置开始。
+int write(int index, string mem_area, int count)
 {
     for (int j = 0; j < CMAX; j++)
     {
@@ -264,7 +264,7 @@ int write(int index, string mem_area, int count)// 把memarea指定的内存位�
     cout << "找不到文件,请重试" << endl;
     return 0;
 }
-int lseek(int index, int pos)// 把文件的读写指针移动到pos指定的位置。pos是一个整数，表示从文件开始位置的偏移量。文件打开时，读写指针自动设置为0。每次读写操作之后，它指向最后被访问的字节的下一个位置。lseek能够在不进行读写操作的情况下改变读写指针能位置。
+int lseek(int index, int pos)
 {
     for (int j = 0; j < CMAX; j++)
     {
@@ -289,7 +289,7 @@ int dir() {
     }
     return 0;
 }
-int show_path()//实现显示当前路径的函数
+int show_path()
 {
     cout << "~/";
     return 1;
@@ -348,7 +348,6 @@ int main() {
             else if (choice == "write")
             {
                 cin >> index;
-                //                cin >> memarea;
                 cin >> choice;
                 count = choice.size();
                 write(index, choice, count);
@@ -371,7 +370,6 @@ int main() {
                 dir();
             }
             else if (choice == "exit") {
-                system("CLS");
                 return 0;
             }
         }
